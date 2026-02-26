@@ -43,7 +43,9 @@ export function Navbar() {
       <header
         className={cn(
           "fixed left-0 right-0 top-10 z-50 transition-all duration-300",
-          useLightNav ? "bg-transparent" : "bg-white/95 backdrop-blur-md shadow-sm"
+          useLightNav
+            ? "bg-gradient-to-b from-black/60 via-black/30 to-transparent"
+            : "bg-white shadow-md"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
@@ -51,7 +53,7 @@ export function Navbar() {
             href="/"
             className={cn(
               "font-display text-xl font-bold shrink-0",
-              useLightNav ? "text-white drop-shadow-md" : "text-primary"
+              useLightNav ? "text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.7)]" : "text-primary"
             )}
           >
             Blessings Global
@@ -64,9 +66,11 @@ export function Navbar() {
                 className={cn(
                   "text-sm font-medium transition-colors",
                   pathname === link.href
-                    ? "text-primary"
+                    ? useLightNav
+                      ? "text-white font-semibold underline underline-offset-4 decoration-accent"
+                      : "text-primary font-semibold"
                     : useLightNav
-                      ? "text-white hover:text-white drop-shadow-md"
+                      ? "text-white/90 hover:text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]"
                       : "text-stone-700 hover:text-primary"
                 )}
               >
