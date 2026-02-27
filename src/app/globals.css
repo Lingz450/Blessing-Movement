@@ -4,29 +4,35 @@
 
 @layer base {
   :root {
-    --primary: 262 84% 30%;
-    --primary-foreground: 0 0% 100%;
-    --accent: 43 67% 52%;
-    --accent-foreground: 0 0% 10%;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
-    --muted: 30 6% 96%;
-    --muted-foreground: 25 5% 45%;
+    /* Cinematic dark faith palette */
+    --primary: 279 60% 26%; /* deep royal purple */
+    --primary-foreground: 42 42% 96%; /* warm white */
+    --accent: 45 60% 52%; /* warm gold */
+    --accent-foreground: 24 22% 10%;
+    --background: 30 40% 4%; /* near-black brown */
+    --foreground: 42 42% 96%; /* warm white */
+    --muted: 30 25% 10%;
+    --muted-foreground: 33 18% 70%;
   }
   html {
     scroll-behavior: smooth;
-    color: #1c1917;
+    color: #f5f0e8;
+    background-color: #0d0a07;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
   body {
     @apply antialiased;
-    background-color: #ffffff;
-    color: #1c1917;
+    background-color: #0d0a07;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(212, 175, 55, 0.18), transparent 55%),
+      radial-gradient(circle at 85% 10%, rgba(232, 115, 42, 0.16), transparent 55%),
+      radial-gradient(circle at 50% 120%, rgba(6, 95, 70, 0.24), transparent 70%);
+    color: #f5f0e8;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 }
 
-/* Subtle grain overlay for premium feel */
+/* Grain overlay for cinematic texture */
 .grain-overlay::before {
   content: "";
   position: absolute;
@@ -36,11 +42,12 @@
   z-index: 0;
 }
 
-/* Glassmorphism */
-.glass {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
-}
-
 .glass-dark {
-  @apply bg-primary/90 backdrop-blur-md border border-white/10;
+  /* Dark glass card used across sections */
+  background-color: rgba(10, 7, 3, 0.78);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.16);
 }

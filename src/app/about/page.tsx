@@ -45,10 +45,10 @@ const timeline = [
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-28 pb-16 bg-muted/30">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-stone-900"
+            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -56,7 +56,7 @@ export default function AboutPage() {
             About Us
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-muted-foreground"
+            className="mt-4 text-xl text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -66,10 +66,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
-            className="font-display text-2xl font-semibold text-stone-900 mb-4"
+            className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -77,7 +77,7 @@ export default function AboutPage() {
             Our Vision
           </motion.h2>
           <motion.p
-            className="text-lg text-stone-600 leading-relaxed"
+            className="text-lg text-[#F5F0E8B3] leading-relaxed"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,10 +94,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
-            className="font-display text-2xl font-semibold text-stone-900 mb-8"
+            className="font-display text-2xl font-semibold text-[#F5F0E8] mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -114,12 +114,12 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="flex-shrink-0 w-20 text-primary font-display font-bold text-lg">
+                <div className="flex-shrink-0 w-20 text-accent font-display font-bold text-lg">
                   {item.year}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-stone-900">{item.title}</h3>
-                  <p className="mt-1 text-stone-600">{item.detail}</p>
+                  <h3 className="font-semibold text-[#F5F0E8]">{item.title}</h3>
+                  <p className="mt-1 text-[#F5F0E8B3]">{item.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -127,10 +127,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2
-            className="font-display text-2xl font-semibold text-stone-900 mb-8 text-center"
+            className="font-display text-2xl font-semibold text-[#F5F0E8] mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -141,18 +141,18 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <motion.div
                 key={v.title}
-                className="flex gap-4 p-6 rounded-2xl border border-stone-200 bg-white hover:shadow-lg transition-shadow"
+                className="flex gap-4 p-6 glass-dark hover:shadow-xl transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
                   <v.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-stone-900">{v.title}</h3>
-                  <p className="mt-1 text-stone-600 text-sm">{v.description}</p>
+                  <h3 className="font-semibold text-[#F5F0E8]">{v.title}</h3>
+                  <p className="mt-1 text-[#F5F0E8B3] text-sm">{v.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -160,10 +160,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2
-            className="font-display text-2xl font-semibold text-stone-900 mb-8 text-center"
+            className="font-display text-2xl font-semibold text-[#F5F0E8] mb-8 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="relative h-48 w-48 mx-auto rounded-2xl overflow-hidden border-4 border-white shadow-lg">
+                <div className="relative h-48 w-48 mx-auto rounded-2xl overflow-hidden border-4 border-accent/80 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -189,12 +189,12 @@ export default function AboutPage() {
                     sizes="192px"
                   />
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold text-stone-900">
+                <h3 className="mt-4 font-display text-lg font-semibold text-[#F5F0E8]">
                   {member.name}
                 </h3>
                 <p className="text-sm text-primary font-medium">{member.role}</p>
                 {member.bio && (
-                  <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
+                  <p className="mt-2 text-sm text-[#F5F0E8B3] text-sm">{member.bio}</p>
                 )}
               </motion.div>
             ))}
@@ -202,18 +202,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.p
-            className="text-stone-600"
+            className="text-[#F5F0E8B3]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <Calendar className="inline h-5 w-5 mr-1 text-primary" /> Events across Nigeria and
+            <Calendar className="inline h-5 w-5 mr-1 text-accent" /> Events across Nigeria and
             beyond.
             <br />
-            <MapPin className="inline h-5 w-5 mr-1 text-primary mt-2" /> Lagos, Abuja, and growing.
+            <MapPin className="inline h-5 w-5 mr-1 text-accent mt-2" /> Lagos, Abuja, and growing.
           </motion.p>
         </div>
       </section>

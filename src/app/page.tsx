@@ -106,20 +106,20 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 grain-overlay opacity-30" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(5,5,5,0.92),_rgba(0,0,0,0.98))]" />
+        <div className="absolute inset-0 grain-overlay opacity-40" />
         <Image
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1920&q=80&auto=format&fit=crop"
           alt="Worship and community"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-40 mix-blend-screen"
           priority
           sizes="100vw"
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-[#F5F0E8] [text-shadow:0_2px_10px_rgba(0,0,0,0.7)]">
           <motion.h1
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight [text-shadow:0_2px_8px_rgba(0,0,0,0.4)]"
+            className="font-display text-4xl md:text-5xl lg:text-[4.5rem] font-bold leading-tight [text-shadow:0_0_32px_rgba(212,175,55,0.7)]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -129,7 +129,7 @@ export default function HomePage() {
             One Blessing at a Time.
           </motion.h1>
           <motion.p
-            className="mt-4 text-lg md:text-xl text-white/90 max-w-2xl mx-auto"
+            className="mt-4 text-lg md:text-xl text-[#F5F0E8CC] max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -144,14 +144,14 @@ export default function HomePage() {
           >
             <Link
               href="/get-involved"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground hover:bg-accent-light transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3 font-semibold text-accent-foreground shadow-[0_0_24px_rgba(212,175,55,0.6)] hover:bg-accent-light transition-colors"
             >
               Join the Movement
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/donate"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 font-semibold text-white hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-[#F5F0E8]/70 px-6 py-3 font-semibold text-[#F5F0E8]/90 hover:bg-[#F5F0E8]/10 transition-colors"
             >
               Give Now
             </Link>
@@ -174,28 +174,28 @@ export default function HomePage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-white border-b border-stone-100">
+      <section className="py-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCounter value={2500} label="Lives Touched" />
-            <StatCounter value={12} label="Countries Reached" />
-            <StatCounter value={180} suffix="+" label="Volunteers" />
-            <StatCounter value={45} label="Outreaches Completed" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <StatCounter value={2500} label="Lives Touched" className="glass-dark py-6" />
+            <StatCounter value={12} label="Countries Reached" className="glass-dark py-6" />
+            <StatCounter value={180} suffix="+" label="Volunteers" className="glass-dark py-6" />
+            <StatCounter value={45} label="Outreaches Completed" className="glass-dark py-6" />
           </div>
         </div>
       </section>
 
       {/* Mission cards */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2
-            className="font-display text-3xl md:text-4xl font-bold text-center text-stone-900"
+            className="font-display text-3xl md:text-4xl font-bold text-center text-[#F5F0E8]"
             {...fadeUp}
           >
             Our Missions
           </motion.h2>
           <motion.p
-            className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto"
+            className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto text-[#F5F0E8B3]"
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
@@ -214,18 +214,18 @@ export default function HomePage() {
                 >
                   <Link
                     href="/programs"
-                    className="block rounded-2xl bg-white border border-stone-200 p-6 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 group"
+                    className="block glass-dark p-6 transition-all duration-300 group"
                   >
                     <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                       <Icon className="h-7 w-7" />
                     </div>
-                    <h3 className="mt-4 font-display text-xl font-semibold text-stone-900">
+                    <h3 className="mt-4 font-display text-xl font-semibold text-[#F5F0E8]">
                       {m.title}
                     </h3>
-                    <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                    <p className="mt-2 text-sm text-[#F5F0E8B3] line-clamp-2">
                       {m.description}
                     </p>
-                    <span className="mt-4 inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                    <span className="mt-4 inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -238,10 +238,10 @@ export default function HomePage() {
       </section>
 
       {/* What We Do - alternating */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h2
-            className="font-display text-3xl md:text-4xl font-bold text-center text-stone-900"
+            className="font-display text-3xl md:text-4xl font-bold text-center text-[#F5F0E8]"
             {...fadeUp}
           >
             What We Do
@@ -266,13 +266,13 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-2xl font-semibold text-stone-900">
+                  <h3 className="font-display text-2xl font-semibold text-[#F5F0E8]">
                     {m.subtitle}
                   </h3>
-                  <p className="mt-3 text-stone-600">{m.description}</p>
+                  <p className="mt-3 text-[#F5F0E8B3]">{m.description}</p>
                   <Link
                     href="/programs"
-                    className="mt-4 inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+                    className="mt-4 inline-flex items-center gap-2 text-accent font-semibold hover:underline"
                   >
                     Explore program
                     <ArrowRight className="h-4 w-4" />
@@ -285,16 +285,16 @@ export default function HomePage() {
       </section>
 
       {/* Testimonies */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
-            className="font-display text-3xl md:text-4xl font-bold text-center text-stone-900"
+            className="font-display text-3xl md:text-4xl font-bold text-center text-[#F5F0E8]"
             {...fadeUp}
           >
             Stories of Impact
           </motion.h2>
           <motion.p
-            className="mt-2 text-center text-muted-foreground"
+            className="mt-2 text-center text-[#F5F0E8B3]"
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
@@ -319,18 +319,18 @@ export default function HomePage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
               <motion.h2
-                className="font-display text-3xl md:text-4xl font-bold text-stone-900"
+                    className="font-display text-3xl md:text-4xl font-bold text-[#F5F0E8]"
                 {...fadeUp}
               >
                 Upcoming Events
               </motion.h2>
-              <motion.p
-                className="mt-2 text-muted-foreground"
+                  <motion.p
+                    className="mt-2 text-[#F5F0E8B3]"
                 {...fadeUp}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
@@ -339,7 +339,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/events"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-accent font-semibold hover:underline"
             >
               View all events
               <ArrowRight className="h-4 w-4" />

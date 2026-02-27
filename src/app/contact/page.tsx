@@ -49,10 +49,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-muted/30">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-stone-900"
+            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -60,7 +60,7 @@ export default function ContactPage() {
             Contact
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-muted-foreground"
+            className="mt-4 text-xl text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -70,25 +70,25 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-stone-900 mb-4">
+            <h2 className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4">
               Send a message
             </h2>
             {submitted ? (
-              <div className="py-10 text-center">
+              <div className="py-10 text-center glass-dark rounded-2xl">
                 <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
                   <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-stone-900">Message sent!</h3>
-                <p className="mt-2 text-stone-600">Thank you! We&apos;ll get back to you soon.</p>
+                <h3 className="font-display text-xl font-semibold text-[#F5F0E8]">Message sent!</h3>
+                <p className="mt-2 text-[#F5F0E8B3]">Thank you! We&apos;ll get back to you soon.</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-4 text-primary font-medium hover:underline text-sm"
@@ -97,9 +97,9 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 glass-dark p-6 rounded-2xl">
                 <div>
-                  <label htmlFor="c-name" className="block text-sm font-medium text-stone-700 mb-1">
+                  <label htmlFor="c-name" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                     Name *
                   </label>
                   <input
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-email" className="block text-sm font-medium text-stone-700 mb-1">
+                  <label htmlFor="c-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                     Email *
                   </label>
                   <input
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-subject" className="block text-sm font-medium text-stone-700 mb-1">
+                  <label htmlFor="c-subject" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                     Subject *
                   </label>
                   <input
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-message" className="block text-sm font-medium text-stone-700 mb-1">
+                  <label htmlFor="c-message" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                     Message *
                   </label>
                   <textarea
@@ -151,7 +151,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div className="flex gap-2">
-                  <label className="flex items-center gap-2 text-sm text-stone-600 cursor-pointer">
+                  <label className="flex items-center gap-2 text-sm text-[#F5F0E8B3] cursor-pointer">
                     <input name="prayer" type="checkbox" className="rounded border-stone-300 accent-primary" />
                     I&apos;m also submitting a prayer request
                   </label>
@@ -182,23 +182,23 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-stone-900 mb-4">
+            <h2 className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4">
               Connect with us
             </h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-stone-600">
-                <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:hello@blessingsglobal.org" className="hover:text-primary">
+              <div className="flex items-center gap-3 text-[#F5F0E8B3]">
+                <Mail className="h-5 w-5 text-accent" />
+                <a href="mailto:hello@blessingsglobal.org" className="hover:text-accent">
                   hello@blessingsglobal.org
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-stone-600">
-                <MapPin className="h-5 w-5 text-primary" />
+              <div className="flex items-center gap-3 text-[#F5F0E8B3]">
+                <MapPin className="h-5 w-5 text-accent" />
                 <span>Lagos, Nigeria · Serving globally</span>
               </div>
             </div>
             <div className="mt-8">
-              <p className="text-sm font-medium text-stone-700 mb-3">Social media</p>
+              <p className="text-sm font-medium text-[#F5F0E8] mb-3">Social media</p>
               <div className="flex flex-wrap gap-3">
                 {socials.map((s) => (
                   <a
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-stone-200 hover:border-primary/50 hover:bg-primary/5 transition-colors text-stone-700"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#2A1C0C] hover:border-accent/60 hover:bg-[#1C1508] transition-colors text-[#F5F0E8B3]"
                   >
                     <s.icon className="h-4 w-4" />
                     <span className="text-sm">{s.label}</span>
@@ -214,8 +214,8 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 p-4 rounded-xl bg-muted/50">
-              <p className="text-sm text-stone-600">
+            <div className="mt-8 p-4 rounded-xl bg-[#1C1508]">
+              <p className="text-sm text-[#F5F0E8B3]">
                 Need prayer right now? Use the <strong>&quot;Pray With Us&quot;</strong> button on any page to submit a prayer request.
               </p>
               <Link href="/get-involved#prayer" className="mt-2 inline-block text-primary font-medium text-sm hover:underline">

@@ -26,10 +26,10 @@ export default function EventsPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-muted/30">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-stone-900"
+            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ export default function EventsPage() {
             Events
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-muted-foreground"
+            className="mt-4 text-xl text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -48,11 +48,11 @@ export default function EventsPage() {
       </section>
 
       {featured && (
-        <section className="py-8 bg-white">
+        <section className="py-8 bg-[#0D0A07]">
           <div className="max-w-6xl mx-auto px-4">
-            <p className="text-sm font-medium text-primary mb-2">Featured</p>
+            <p className="text-sm font-medium text-accent mb-2">Featured</p>
             <motion.div
-              className="relative rounded-2xl overflow-hidden border border-stone-200 shadow-lg"
+              className="relative rounded-2xl overflow-hidden border border-accent/40 shadow-[0_0_30px_rgba(0,0,0,0.8)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -100,7 +100,7 @@ export default function EventsPage() {
         </section>
       )}
 
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap gap-2 mb-8">
             {filters.map((f) => (
@@ -110,8 +110,8 @@ export default function EventsPage() {
                 onClick={() => setFilter(f.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filter === f.value
-                    ? "bg-primary text-white"
-                    : "bg-muted text-stone-600 hover:bg-stone-200"
+                    ? "bg-accent text-accent-foreground shadow-[0_0_16px_rgba(212,175,55,0.5)]"
+                    : "bg-[#1C1508] text-[#F5F0E8B3] hover:bg-[#2A1C0C]"
                 }`}
               >
                 {f.label}
@@ -124,7 +124,7 @@ export default function EventsPage() {
             ))}
           </div>
           {filtered.length === 0 && (
-            <p className="text-center text-muted-foreground py-12">
+            <p className="text-center text-[#F5F0E8B3] py-12">
               No events in this category yet. Check back soon.
             </p>
           )}

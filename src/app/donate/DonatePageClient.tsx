@@ -73,10 +73,10 @@ export function DonatePageClient() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-muted/30">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-stone-900"
+            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -84,7 +84,7 @@ export function DonatePageClient() {
             Give
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-muted-foreground"
+            className="mt-4 text-xl text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -94,21 +94,21 @@ export function DonatePageClient() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
-            className="rounded-2xl bg-primary/5 border border-primary/20 p-6 md:p-8 mb-10"
+            className="rounded-2xl glass-dark p-6 md:p-8 mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-stone-900 mb-4">
+            <h2 className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4">
               Your gift makes an impact
             </h2>
             <ul className="space-y-2">
               {impactStatements.map((s, i) => (
-                <li key={i} className="flex items-center gap-2 text-stone-700">
-                  <Heart className="h-4 w-4 text-primary flex-shrink-0" />
+                <li key={i} className="flex items-center gap-2 text-[#F5F0E8B3]">
+                  <Heart className="h-4 w-4 text-accent flex-shrink-0" />
                   {s}
                 </li>
               ))}
@@ -116,7 +116,7 @@ export function DonatePageClient() {
           </motion.div>
 
           <motion.div
-            className="max-w-2xl"
+            className="max-w-2xl glass-dark p-6 md:p-8 rounded-2xl"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -127,8 +127,8 @@ export function DonatePageClient() {
                 onClick={() => setFrequency("once")}
                 className={`flex-1 py-3 rounded-xl font-medium transition-colors ${
                   frequency === "once"
-                    ? "bg-primary text-white"
-                    : "bg-muted text-stone-600 hover:bg-stone-200"
+                    ? "bg-accent text-accent-foreground shadow-[0_0_18px_rgba(212,175,55,0.5)]"
+                    : "bg-[#1C1508] text-[#F5F0E8B3] hover:bg-[#2A1C0C]"
                 }`}
               >
                 One-time
@@ -138,8 +138,8 @@ export function DonatePageClient() {
                 onClick={() => setFrequency("monthly")}
                 className={`flex-1 py-3 rounded-xl font-medium transition-colors ${
                   frequency === "monthly"
-                    ? "bg-primary text-white"
-                    : "bg-muted text-stone-600 hover:bg-stone-200"
+                    ? "bg-accent text-accent-foreground shadow-[0_0_18px_rgba(212,175,55,0.5)]"
+                    : "bg-[#1C1508] text-[#F5F0E8B3] hover:bg-[#2A1C0C]"
                 }`}
               >
                 Monthly (Blessings Builders)
@@ -153,7 +153,7 @@ export function DonatePageClient() {
 
             <div className="mt-8 space-y-4">
               <div>
-                <label htmlFor="donor-name" className="block text-sm font-medium text-stone-700 mb-1">
+                <label htmlFor="donor-name" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                   Name (optional, for receipt)
                 </label>
                 <input
@@ -166,7 +166,7 @@ export function DonatePageClient() {
                 />
               </div>
               <div>
-                <label htmlFor="donor-email" className="block text-sm font-medium text-stone-700 mb-1">
+                <label htmlFor="donor-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">
                   Email *
                 </label>
                 <input
@@ -185,9 +185,9 @@ export function DonatePageClient() {
               <p className="mt-4 text-sm text-red-600">{error}</p>
             )}
 
-            <div className="mt-6 p-4 rounded-xl bg-muted/50 flex items-start gap-3">
-              <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-stone-600">
+            <div className="mt-6 p-4 rounded-xl bg-[#1C1508] flex items-start gap-3">
+              <Shield className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-[#F5F0E8B3]">
                 Secure payment via Paystack. Your details are protected. View receipts in your{" "}
                 <Link href="/portal" className="text-primary font-medium hover:underline">
                   donor portal
@@ -230,7 +230,7 @@ export function DonatePageClient() {
             >
               {loading ? "Redirecting to payment…" : "Continue to payment"}
             </button>
-            <p className="mt-3 text-center text-sm text-muted-foreground">
+            <p className="mt-3 text-center text-sm text-[#F5F0E8B3]">
               Powered by Paystack. You can also{" "}
               <Link href="/portal" className="text-primary hover:underline">
                 sign in

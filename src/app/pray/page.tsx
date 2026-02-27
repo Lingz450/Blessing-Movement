@@ -98,8 +98,8 @@ function PrayerCard({ prayer }: PrayerCardProps) {
 
   return (
     <div
-      className={`bg-white rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-md ${
-        isTestimony ? "border-accent/40" : "border-stone-200"
+      className={`glass-dark p-6 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.35)] ${
+        isTestimony ? "border border-accent/50" : ""
       }`}
     >
       {/* Testimony badge */}
@@ -113,7 +113,7 @@ function PrayerCard({ prayer }: PrayerCardProps) {
       )}
 
       {/* Prayer content */}
-      <p className="text-stone-700 leading-relaxed text-sm">
+      <p className="text-[#F5F0E8CC] leading-relaxed text-sm">
         &ldquo;{displayContent}&rdquo;
       </p>
 
@@ -128,13 +128,13 @@ function PrayerCard({ prayer }: PrayerCardProps) {
           </span>
           {/* Name */}
           {firstName && (
-            <span className="text-xs text-stone-400 font-medium">
+            <span className="text-xs text-[#F5F0E8B3] font-medium">
               — {firstName}
             </span>
           )}
         </div>
         {/* Date */}
-        <span className="text-xs text-stone-400">
+        <span className="text-xs text-[#F5F0E8B3]">
           {formatRelativeDate(prayer.createdAt)}
         </span>
       </div>
@@ -194,13 +194,13 @@ export default async function PrayerWallPage() {
       </section>
 
       {/* ── Submit CTA ────────────────────────────────────────────────────── */}
-      <section className="py-8 bg-white border-b border-stone-100">
+      <section className="py-8 bg-[#0D0A07] border-b border-[#1C1508]">
         <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="font-display text-lg font-bold text-stone-900">
+            <p className="font-display text-lg font-bold text-[#F5F0E8]">
               Have a prayer request?
             </p>
-            <p className="text-sm text-stone-500 mt-0.5">
+            <p className="text-sm text-[#F5F0E8B3] mt-0.5">
               Submit anonymously or with your name — we pray for every request.
             </p>
           </div>
@@ -217,16 +217,16 @@ export default async function PrayerWallPage() {
       </section>
 
       {/* ── Prayer wall grid ──────────────────────────────────────────────── */}
-      <section className="py-12 bg-muted/30 min-h-screen">
+      <section className="py-12 bg-[#0D0A07] min-h-screen">
         <div className="max-w-4xl mx-auto px-4">
 
           {/* Count heading */}
           {prayers.length > 0 && (
             <div className="flex items-center justify-between mb-6">
-              <h2 className="font-display text-xl font-bold text-stone-900">
+              <h2 className="font-display text-xl font-bold text-[#F5F0E8]">
                 Community prayers
               </h2>
-              <span className="text-sm text-stone-400 font-medium">
+              <span className="text-sm text-[#F5F0E8B3] font-medium">
                 {prayers.length} public request{prayers.length !== 1 ? "s" : ""}
               </span>
             </div>
@@ -238,10 +238,10 @@ export default async function PrayerWallPage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-5">
                 <Inbox className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-display text-xl font-bold text-stone-900 mb-2">
+              <h3 className="font-display text-xl font-bold text-[#F5F0E8] mb-2">
                 Be the first to pray
               </h3>
-              <p className="text-stone-500 max-w-sm mx-auto mb-6">
+              <p className="text-[#F5F0E8B3] max-w-sm mx-auto mb-6">
                 No public prayer requests yet. Submit yours and let the
                 community stand with you in faith.
               </p>
@@ -267,18 +267,18 @@ export default async function PrayerWallPage() {
           {/* Bottom CTA */}
           {prayers.length > 0 && (
             <div className="mt-12 text-center">
-              <div className="bg-white rounded-2xl border border-stone-200 shadow-sm p-8 max-w-md mx-auto">
-                <Heart className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-display text-lg font-bold text-stone-900 mb-2">
+              <div className="glass-dark p-8 max-w-md mx-auto">
+                <Heart className="h-8 w-8 text-accent mx-auto mb-3" />
+                <h3 className="font-display text-lg font-bold text-[#F5F0E8] mb-2">
                   Add your prayer request
                 </h3>
-                <p className="text-sm text-stone-500 mb-5">
+                <p className="text-sm text-[#F5F0E8B3] mb-5">
                   Let our community agree with you in faith. We pray for every
                   request submitted.
                 </p>
                 <Link
                   href="/get-involved#prayer"
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-light transition-colors w-full justify-center"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:bg-accent-light transition-colors w-full justify-center"
                 >
                   Submit a Request
                   <ArrowRight className="h-4 w-4" />

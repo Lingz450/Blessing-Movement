@@ -13,7 +13,7 @@ export function ScriptureQuote({ verse, reference, className }: ScriptureQuotePr
   return (
     <motion.blockquote
       className={cn(
-        "relative pl-6 pr-4 py-4 border-l-4 border-accent bg-muted/50 rounded-r-lg",
+        "relative pl-6 pr-5 py-5 border-l-4 border-accent bg-[#1C1508] rounded-2xl shadow-[0_0_24px_rgba(0,0,0,0.7)]",
         className
       )}
       initial={{ opacity: 0, x: -10 }}
@@ -21,10 +21,10 @@ export function ScriptureQuote({ verse, reference, className }: ScriptureQuotePr
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <p className="font-display text-lg md:text-xl text-stone-700 italic leading-relaxed">
+      <p className="font-display text-lg md:text-xl italic leading-relaxed text-[#F5F0E8CC]">
         &ldquo;{verse}&rdquo;
       </p>
-      <cite className="mt-2 block text-sm font-medium text-primary not-italic">
+      <cite className="mt-3 block text-sm font-semibold text-accent not-italic tracking-wide uppercase">
         — {reference}
       </cite>
     </motion.blockquote>

@@ -10,20 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#4A0E8F",
-          foreground: "#ffffff",
-          light: "#6B21B3",
-          dark: "#3B0B6E",
+          DEFAULT: "#3B214B", // deep royal purple
+          foreground: "#F5F0E8",
+          light: "#5C3473",
+          dark: "#241331",
         },
         accent: {
-          DEFAULT: "#D4AF37",
-          foreground: "#1a1a1a",
+          DEFAULT: "#D4AF37", // warm gold
+          foreground: "#1A1208",
           light: "#E5C65C",
-          dark: "#B8962E",
+          dark: "#C8860A",
         },
         muted: {
-          DEFAULT: "#f5f5f4",
-          foreground: "#57534e",
+          DEFAULT: "#1C1508",
+          foreground: "#A89A84",
         },
       },
       fontFamily: {
@@ -32,7 +32,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-hero":
-          "linear-gradient(135deg, #4A0E8F 0%, #6B21B3 50%, #3B0B6E 100%)",
+          "radial-gradient(circle at 15% 0%, rgba(212,175,55,0.35), transparent 55%), radial-gradient(circle at 80% 0%, rgba(232,115,42,0.3), transparent 55%), radial-gradient(circle at 50% 120%, #050302, #0D0A07)",
         "gradient-gold": "linear-gradient(135deg, #D4AF37 0%, #E5C65C 100%)",
         grain: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")",
       },

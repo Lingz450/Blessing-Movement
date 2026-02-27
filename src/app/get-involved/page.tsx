@@ -47,10 +47,10 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-muted/30">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-stone-900"
+            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -58,7 +58,7 @@ export default function GetInvolvedPage() {
             Get Involved
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-muted-foreground"
+            className="mt-4 text-xl text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -69,15 +69,15 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Volunteer */}
-      <section id="volunteer" className="py-16 bg-white scroll-mt-24">
+      <section id="volunteer" className="py-16 bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-2xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
               <Heart className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-stone-900">Volunteer</h2>
-              <p className="text-muted-foreground text-sm">Serve at outreaches, events, or behind the scenes.</p>
+              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Volunteer</h2>
+              <p className="text-[#F5F0E8B3] text-sm">Serve at outreaches, events, or behind the scenes.</p>
             </div>
           </div>
           {volunteerStatus === "success" ? (
@@ -107,30 +107,30 @@ export default function GetInvolvedPage() {
                   setVolunteerStatus("error");
                 }
               }}
-              className="space-y-4"
+              className="space-y-4 glass-dark p-6 rounded-2xl"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <div>
-                <label htmlFor="v-name" className="block text-sm font-medium text-stone-700 mb-1">Full name *</label>
+                <label htmlFor="v-name" className="block text-sm font-medium text-[#F5F0E8] mb-1">Full name *</label>
                 <input id="v-name" name="v-name" type="text" required
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                   placeholder="Your name" />
               </div>
               <div>
-                <label htmlFor="v-email" className="block text-sm font-medium text-stone-700 mb-1">Email *</label>
+                <label htmlFor="v-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">Email *</label>
                 <input id="v-email" name="v-email" type="email" required
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                   placeholder="your@email.com" />
               </div>
               <div>
-                <label htmlFor="v-phone" className="block text-sm font-medium text-stone-700 mb-1">Phone (optional)</label>
+                <label htmlFor="v-phone" className="block text-sm font-medium text-[#F5F0E8] mb-1">Phone (optional)</label>
                 <input id="v-phone" name="v-phone" type="tel"
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
                   placeholder="+234..." />
               </div>
               <div>
-                <label htmlFor="v-interest" className="block text-sm font-medium text-stone-700 mb-1">I&apos;m interested in (optional)</label>
+                <label htmlFor="v-interest" className="block text-sm font-medium text-[#F5F0E8] mb-1">I&apos;m interested in (optional)</label>
                 <div className="relative">
                   <select
                     id="v-interest"
@@ -160,28 +160,28 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Partnership */}
-      <section id="partner" className="py-16 bg-muted/30 scroll-mt-24">
+      <section id="partner" className="py-16 bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-8">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
               <Handshake className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-stone-900">Partnership & Sponsorship</h2>
-              <p className="text-muted-foreground text-sm">Businesses and professionals: join the Blessings Partners Circle.</p>
+              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Partnership & Sponsorship</h2>
+              <p className="text-[#F5F0E8B3] text-sm">Businesses and professionals: join the Blessings Partners Circle.</p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {partnerTiers.map((tier, i) => (
               <motion.div key={tier.name}
-                className="p-6 rounded-2xl border border-stone-200 bg-white"
+                className="p-6 glass-dark"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}>
-                <h3 className="font-display text-lg font-semibold text-stone-900">{tier.name}</h3>
-                <p className="mt-1 text-primary font-medium">{tier.amount}</p>
-                <p className="mt-2 text-sm text-stone-600">{tier.description}</p>
+                <h3 className="font-display text-lg font-semibold text-[#F5F0E8]">{tier.name}</h3>
+                <p className="mt-1 text-accent font-medium">{tier.amount}</p>
+                <p className="mt-2 text-sm text-[#F5F0E8B3]">{tier.description}</p>
               </motion.div>
             ))}
           </div>
@@ -246,15 +246,15 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Prayer */}
-      <section id="prayer" className="py-16 bg-white scroll-mt-24">
+      <section id="prayer" className="py-16 bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-2xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
               <MessageCircle className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-stone-900">Prayer Requests</h2>
-              <p className="text-muted-foreground text-sm">We pray with you. Submit a request or use the &quot;Pray With Us&quot; button on any page.</p>
+              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Prayer Requests</h2>
+              <p className="text-[#F5F0E8B3] text-sm">We pray with you. Submit a request or use the &quot;Pray With Us&quot; button on any page.</p>
             </div>
           </div>
           {prayerStatus === "success" ? (
@@ -282,18 +282,18 @@ export default function GetInvolvedPage() {
                   setPrayerStatus("error");
                 }
               }}
-              className="space-y-4"
+              className="space-y-4 glass-dark p-6 rounded-2xl"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <div>
-                <label htmlFor="pr-request" className="block text-sm font-medium text-stone-700 mb-1">Prayer request *</label>
+                <label htmlFor="pr-request" className="block text-sm font-medium text-[#F5F0E8] mb-1">Prayer request *</label>
                 <textarea id="pr-request" name="pr-request" required rows={5}
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none"
                   placeholder="How can we pray for you?" />
               </div>
               <div>
-                <label htmlFor="pr-email" className="block text-sm font-medium text-stone-700 mb-1">Email (optional, for follow-up)</label>
+                <label htmlFor="pr-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">Email (optional, for follow-up)</label>
                 <input id="pr-email" name="pr-email" type="email"
                   className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
               </div>
@@ -309,9 +309,9 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-muted/30">
+      <section className="py-12 bg-[#0D0A07]">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-stone-600 mb-4">Want to give financially? Every gift fuels our missions.</p>
+          <p className="text-[#F5F0E8B3] mb-4">Want to give financially? Every gift fuels our missions.</p>
           <Link href="/donate"
             className="inline-flex items-center rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground hover:bg-accent-light transition-colors">
             Give Now
