@@ -10,7 +10,8 @@
       "Bash(git push origin main)",
       "Bash(npm install next-cloudinary)",
       "Bash(npx prisma db push --accept-data-loss)",
-      "Bash(npm run db:seed)"
+      "Bash(npm run db:seed)",
+      "Bash(git add src/app/donate/page.tsx src/app/learn/page.tsx src/app/pods/page.tsx src/app/programs/page.tsx src/app/testimonies/page.tsx src/components/ui/DonationAmountSelector.tsx)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Admin\\.claude\\projects\\c--Users-Admin-Desktop-Blessing-movement",
