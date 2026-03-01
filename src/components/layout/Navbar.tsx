@@ -54,10 +54,10 @@ export function Navbar() {
             <Image
               src="/logo/logo.png"
               alt=""
-              width={140}
-              height={44}
+              width={200}
+              height={64}
               className={cn(
-                "h-9 w-auto object-contain object-left transition-all duration-300",
+                "h-12 md:h-14 w-auto object-contain object-left transition-all duration-300",
                 useLightNav && "invert brightness-110"
               )}
               priority
