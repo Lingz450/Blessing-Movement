@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, Twitter, Linkedin, Loader2 } from "lucide-react";
 
 const links = {
@@ -85,8 +86,14 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
-            <Link href="/" className="font-display text-2xl font-bold">
-              Blessings Global Outreach
+            <Link href="/" className="inline-block" aria-label="Blessings Movement – Home">
+              <Image
+                src="/logo/logo.png"
+                alt=""
+                width={160}
+                height={52}
+                className="h-10 w-auto object-contain object-left invert brightness-110"
+              />
             </Link>
             <p className="mt-3 text-white/80 text-sm max-w-xs">
               Spreading the Love of Christ. Blessing Nations.

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -49,14 +50,18 @@ export function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-          <Link
-            href="/"
-            className={cn(
-              "font-display text-xl font-bold shrink-0",
-              useLightNav ? "text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.7)]" : "text-primary"
-            )}
-          >
-            Blessings Global
+          <Link href="/" className="shrink-0 flex items-center gap-2" aria-label="Blessings Movement – Home">
+            <Image
+              src="/logo/logo.png"
+              alt=""
+              width={140}
+              height={44}
+              className={cn(
+                "h-9 w-auto object-contain object-left transition-all duration-300",
+                useLightNav && "invert brightness-110"
+              )}
+              priority
+            />
           </Link>
           <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
