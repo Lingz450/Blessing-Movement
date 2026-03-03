@@ -100,8 +100,10 @@ export default async function PortalDashboardPage() {
           )}
         </div>
 
-        <p className="mt-6 text-center text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-stone-700">← Back to site</Link>
+        <p className="mt-6 text-center text-sm">
+          <Link href="/" className="text-stone-700 hover:text-stone-900 font-medium">
+            ← Back to site
+          </Link>
         </p>
       </div>
     </div>

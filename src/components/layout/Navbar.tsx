@@ -58,25 +58,17 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <Link
             href="/"
-            className="shrink-0 flex items-center gap-2 bg-transparent"
+            className="shrink-0 flex items-center bg-transparent"
             aria-label="Blessings Movement – Home"
           >
             <Image
-              src="/logo/logo.png"
+              src="/logo/logo-clean.png"
               alt="Blessings Movement"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain object-left transition-all duration-300 dark:brightness-0 dark:invert"
+              width={639}
+              height={234}
+              className="h-10 w-auto object-contain object-left transition-all duration-300 dark:brightness-0 dark:invert"
               priority
             />
-            <span className="flex flex-col leading-tight">
-              <span className="text-[1.1rem] font-bold text-[#1A0F00] dark:text-white">
-                Blessings
-              </span>
-              <span className="text-[1.1rem] font-bold text-[#1A0F00] dark:text-white">
-                Movement
-              </span>
-            </span>
           </Link>
           <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (

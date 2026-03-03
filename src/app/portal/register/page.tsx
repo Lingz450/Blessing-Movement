@@ -115,7 +115,7 @@ export default function PortalRegisterPage() {
           </Link>
         </p>
         <p className="mt-2 text-center text-sm">
-          <Link href="/" className="text-muted-foreground hover:text-stone-700">
+          <Link href="/" className="text-stone-600 hover:text-stone-900 font-medium">
             ← Back to site
           </Link>
         </p>

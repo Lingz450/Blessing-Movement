@@ -88,7 +88,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block" aria-label="Blessings Movement – Home">
               <Image
-                src="/logo/logo.png"
+                src="/logo/logo-clean.png"
                 alt=""
                 width={260}
                 height={80}
