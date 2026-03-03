@@ -92,10 +92,10 @@ export function Navbar() {
                     : pathname === link.href
                       ? useLightNav
                         ? "text-white font-semibold underline underline-offset-4 decoration-accent"
-                        : "text-primary font-semibold"
+                        : "text-white font-semibold"
                       : useLightNav
                         ? "text-white/90 hover:text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.6)]"
-                        : "text-stone-700 hover:text-primary"
+                        : "text-[#F5F0E8B3] hover:text-white"
                 )}
               >
                 {link.label}
