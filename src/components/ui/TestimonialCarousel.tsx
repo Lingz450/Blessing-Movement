@@ -25,7 +25,7 @@ export function TestimonialCarousel({ items, className }: TestimonialCarouselPro
 
   return (
     <div className={cn("relative", className)}>
-      <div className="overflow-hidden rounded-2xl bg-muted/50 border border-stone-200 p-6 md:p-8">
+      <div className="overflow-hidden rounded-2xl glass-dark border border-[#2A1C0C] p-6 md:p-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -45,12 +45,14 @@ export function TestimonialCarousel({ items, className }: TestimonialCarouselPro
               />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <Quote className="h-8 w-8 text-primary/30 mx-auto md:mx-0 mb-2" />
-              <p className="font-display text-lg text-stone-700 italic">
+              <Quote className="h-8 w-8 text-accent/70 mx-auto md:mx-0 mb-3" />
+              <p className="font-display text-lg md:text-xl text-[#F5F0E8] italic leading-relaxed">
                 &ldquo;{items[index].quote}&rdquo;
               </p>
-              <p className="mt-3 font-semibold text-primary">{items[index].name}</p>
-              <p className="text-sm text-muted-foreground">{items[index].role}</p>
+              <p className="mt-4 font-semibold text-accent text-sm md:text-base">
+                {items[index].name}
+              </p>
+              <p className="text-xs md:text-sm text-[#F5F0E8B3]">{items[index].role}</p>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -59,7 +61,7 @@ export function TestimonialCarousel({ items, className }: TestimonialCarouselPro
         <button
           type="button"
           onClick={prev}
-          className="p-2 rounded-full border border-stone-200 hover:bg-white hover:border-primary/30 transition-colors"
+          className="p-2 rounded-full border border-[#3B2A14] bg-[#1C1508] text-[#F5F0E8] hover:bg-[#2A1C0C] hover:border-accent/60 transition-colors"
           aria-label="Previous testimony"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -72,7 +74,7 @@ export function TestimonialCarousel({ items, className }: TestimonialCarouselPro
               onClick={() => setIndex(i)}
               className={cn(
                 "h-2 rounded-full transition-all",
-                i === index ? "w-6 bg-primary" : "w-2 bg-stone-300"
+                i === index ? "w-6 bg-accent" : "w-2 bg-[#4B3A20]"
               )}
               aria-label={`Go to testimony ${i + 1}`}
             />
@@ -81,7 +83,7 @@ export function TestimonialCarousel({ items, className }: TestimonialCarouselPro
         <button
           type="button"
           onClick={next}
-          className="p-2 rounded-full border border-stone-200 hover:bg-white hover:border-primary/30 transition-colors"
+          className="p-2 rounded-full border border-[#3B2A14] bg-[#1C1508] text-[#F5F0E8] hover:bg-[#2A1C0C] hover:border-accent/60 transition-colors"
           aria-label="Next testimony"
         >
           <ChevronRight className="h-5 w-5" />
