@@ -49,10 +49,10 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background)] dark:from-[#1A1208] dark:via-transparent dark:to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
+            className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -60,7 +60,7 @@ export default function ContactPage() {
             Contact
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-[#F5F0E8B3]"
+            className="mt-4 text-xl text-[var(--text-secondary)] dark:text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -70,25 +70,29 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#0D0A07]">
+      <section className="py-12 bg-[var(--background)] dark:bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8] mb-4">
               Send a message
             </h2>
             {submitted ? (
-              <div className="py-10 text-center glass-dark rounded-2xl">
+              <div className="py-10 text-center section-card rounded-2xl">
                 <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
                   <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-[#F5F0E8]">Message sent!</h3>
-                <p className="mt-2 text-[#F5F0E8B3]">Thank you! We&apos;ll get back to you soon.</p>
+                <h3 className="font-display text-xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8]">
+                  Message sent!
+                </h3>
+                <p className="mt-2 text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
+                  Thank you! We&apos;ll get back to you soon.
+                </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="mt-4 text-primary font-medium hover:underline text-sm"
@@ -97,9 +101,9 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 glass-dark p-6 rounded-2xl">
+              <form onSubmit={handleSubmit} className="space-y-4 section-card p-6 rounded-2xl">
                 <div>
-                  <label htmlFor="c-name" className="block text-sm font-medium text-[#F5F0E8] mb-1">
+                  <label htmlFor="c-name" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
                     Name *
                   </label>
                   <input
@@ -107,12 +111,12 @@ export default function ContactPage() {
                     name="c-name"
                     type="text"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">
+                  <label htmlFor="c-email" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
                     Email *
                   </label>
                   <input
@@ -120,12 +124,12 @@ export default function ContactPage() {
                     name="c-email"
                     type="email"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-subject" className="block text-sm font-medium text-[#F5F0E8] mb-1">
+                  <label htmlFor="c-subject" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
                     Subject *
                   </label>
                   <input
@@ -133,12 +137,12 @@ export default function ContactPage() {
                     name="c-subject"
                     type="text"
                     required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                     placeholder="How can we help?"
                   />
                 </div>
                 <div>
-                  <label htmlFor="c-message" className="block text-sm font-medium text-[#F5F0E8] mb-1">
+                  <label htmlFor="c-message" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
                     Message *
                   </label>
                   <textarea
@@ -146,12 +150,12 @@ export default function ContactPage() {
                     name="c-message"
                     required
                     rows={5}
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none resize-none"
                     placeholder="Your message..."
                   />
                 </div>
                 <div className="flex gap-2">
-                  <label className="flex items-center gap-2 text-sm text-[#F5F0E8B3] cursor-pointer">
+                  <label className="flex items-center gap-2 text-sm text-[var(--text-secondary)] dark:text-[#F5F0E8B3] cursor-pointer">
                     <input name="prayer" type="checkbox" className="rounded border-stone-300 accent-primary" />
                     I&apos;m also submitting a prayer request
                   </label>
@@ -182,23 +186,25 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h2 className="font-display text-2xl font-semibold text-[#F5F0E8] mb-4">
+            <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8] mb-4">
               Connect with us
             </h2>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-[#F5F0E8B3]">
+              <div className="flex items-center gap-3 text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
                 <Mail className="h-5 w-5 text-accent" />
                 <a href="mailto:hello@blessingsglobal.org" className="hover:text-accent">
                   hello@blessingsglobal.org
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-[#F5F0E8B3]">
+              <div className="flex items-center gap-3 text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
                 <MapPin className="h-5 w-5 text-accent" />
                 <span>Lagos, Nigeria · Serving globally</span>
               </div>
             </div>
             <div className="mt-8">
-              <p className="text-sm font-medium text-[#F5F0E8] mb-3">Social media</p>
+              <p className="text-sm font-medium text-[var(--text-primary)] dark:text-[#F5F0E8] mb-3">
+                Social media
+              </p>
               <div className="flex flex-wrap gap-3">
                 {socials.map((s) => (
                   <a
@@ -206,7 +212,7 @@ export default function ContactPage() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#2A1C0C] hover:border-accent/60 hover:bg-[#1C1508] transition-colors text-[#F5F0E8B3]"
+                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[var(--border)] hover:border-[var(--accent-gold)] dark:border-[#2A1C0C] dark:hover:border-accent/60 bg-[var(--surface-muted)] dark:bg-transparent hover:bg-[var(--surface)] dark:hover:bg-[#1C1508] transition-colors text-[var(--text-secondary)] dark:text-[#F5F0E8B3]"
                   >
                     <s.icon className="h-4 w-4" />
                     <span className="text-sm">{s.label}</span>
@@ -214,8 +220,8 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 p-4 rounded-xl bg-[#1C1508]">
-              <p className="text-sm text-[#F5F0E8B3]">
+            <div className="mt-8 p-4 rounded-xl bg-[var(--surface-muted)] dark:bg-[#1C1508]">
+              <p className="text-sm text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
                 Need prayer right now? Use the <strong>&quot;Pray With Us&quot;</strong> button on any page to submit a prayer request.
               </p>
               <Link href="/get-involved#prayer" className="mt-2 inline-block text-primary font-medium text-sm hover:underline">

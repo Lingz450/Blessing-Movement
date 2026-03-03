@@ -148,7 +148,7 @@ function MediaCard({ item, index }: { item: MediaItem; index: number }) {
 
   const cardContent = (
     <motion.div
-      className="group glass-dark rounded-2xl overflow-hidden hover:shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-shadow cursor-pointer"
+      className="group section-card rounded-2xl overflow-hidden hover:shadow-[0_8px_32px_var(--shadow)] dark:hover:shadow-[0_0_24px_rgba(212,175,55,0.35)] transition-shadow cursor-pointer"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -182,20 +182,22 @@ function MediaCard({ item, index }: { item: MediaItem; index: number }) {
 
       {/* Card body */}
       <div className="p-4">
-        <h3 className="font-display text-base font-semibold text-[#F5F0E8] leading-snug line-clamp-2 group-hover:text-accent transition-colors">
+        <h3 className="font-display text-base font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8] leading-snug line-clamp-2 group-hover:text-[var(--accent-gold)] dark:group-hover:text-accent transition-colors">
           {item.title}
         </h3>
-        <p className="mt-1 text-sm text-[#F5F0E8B3]">{item.speaker}</p>
+        <p className="mt-1 text-sm text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
+          {item.speaker}
+        </p>
 
         <div className="mt-3 flex items-center justify-between">
           {/* Duration chip */}
-          <span className="inline-flex items-center gap-1 text-xs text-[#F5F0E8B3] bg-[#1C1508] px-2.5 py-1 rounded-full">
+          <span className="inline-flex items-center gap-1 text-xs text-[var(--text-secondary)] dark:text-[#F5F0E8B3] bg-[var(--surface-muted)] dark:bg-[#1C1508] px-2.5 py-1 rounded-full">
             <Clock className="h-3 w-3" />
             {item.duration}
           </span>
 
           {/* Date */}
-          <span className="inline-flex items-center gap-1 text-xs text-[#F5F0E8B3]">
+          <span className="inline-flex items-center gap-1 text-xs text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
             <Calendar className="h-3 w-3" />
             {formatDate(item.date)}
           </span>
@@ -230,10 +232,10 @@ export default function MediaPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-28 pb-12 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
+      <section className="pt-28 pb-12 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background)] dark:from-[#1A1208] dark:via-transparent dark:to-[#050302]">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
+            className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -241,7 +243,7 @@ export default function MediaPage() {
             Media
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-[#F5F0E8B3] max-w-2xl"
+            className="mt-4 text-xl text-[var(--text-secondary)] dark:text-[#F5F0E8B3] max-w-2xl"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -252,7 +254,7 @@ export default function MediaPage() {
       </section>
 
       {/* Filter tabs */}
-      <section className="py-8 bg-[#0D0A07] border-b border-[#1C1508] sticky top-16 z-10">
+      <section className="py-8 bg-[var(--background-secondary)] dark:bg-[#0D0A07] border-b border-[var(--border)] dark:border-[#1C1508] sticky top-16 z-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap gap-2">
             {filterTabs.map((tab) => (
@@ -261,8 +263,8 @@ export default function MediaPage() {
                 onClick={() => setActiveFilter(tab)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeFilter === tab
-                    ? "bg-accent text-accent-foreground shadow-[0_0_18px_rgba(212,175,55,0.5)]"
-                    : "bg-[#1C1508] text-[#F5F0E8B3] hover:bg-[#2A1C0C]"
+                    ? "bg-[var(--accent-gold)] dark:bg-accent text-white dark:text-accent-foreground shadow-[0_0_18px_rgba(184,134,11,0.45)] dark:shadow-[0_0_18px_rgba(212,175,55,0.5)]"
+                    : "bg-[var(--surface-muted)] dark:bg-[#1C1508] text-[var(--text-secondary)] dark:text-[#F5F0E8B3] hover:bg-[var(--border)]/50 dark:hover:bg-[#2A1C0C]"
                 }`}
               >
                 {tab}
@@ -273,7 +275,7 @@ export default function MediaPage() {
       </section>
 
       {/* Media grid */}
-      <section className="py-12 bg-[#0D0A07]">
+      <section className="py-12 bg-[var(--background)] dark:bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           {filtered.length === 0 ? (
             <motion.div

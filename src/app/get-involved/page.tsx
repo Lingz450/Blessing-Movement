@@ -47,10 +47,10 @@ export default function GetInvolvedPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background)] dark:from-[#1A1208] dark:via-transparent dark:to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
+            className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -58,7 +58,7 @@ export default function GetInvolvedPage() {
             Get Involved
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-[#F5F0E8B3]"
+            className="mt-4 text-xl text-[var(--text-secondary)] dark:text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -69,15 +69,19 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Volunteer */}
-      <section id="volunteer" className="py-16 bg-[#0D0A07] scroll-mt-24">
+      <section id="volunteer" className="py-16 bg-[var(--background)] dark:bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-2xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-gold)]/15 text-[var(--accent-gold)] dark:bg-primary/25 dark:text-accent">
               <Heart className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Volunteer</h2>
-              <p className="text-[#F5F0E8B3] text-sm">Serve at outreaches, events, or behind the scenes.</p>
+              <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8]">
+                Volunteer
+              </h2>
+              <p className="text-[var(--text-secondary)] dark:text-[#F5F0E8B3] text-sm">
+                Serve at outreaches, events, or behind the scenes.
+              </p>
             </div>
           </div>
           {volunteerStatus === "success" ? (
@@ -107,35 +111,43 @@ export default function GetInvolvedPage() {
                   setVolunteerStatus("error");
                 }
               }}
-              className="space-y-4 glass-dark p-6 rounded-2xl"
+              className="space-y-4 section-card p-6 rounded-2xl"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
             >
               <div>
-                <label htmlFor="v-name" className="block text-sm font-medium text-[#F5F0E8] mb-1">Full name *</label>
+                <label htmlFor="v-name" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+                  Full name *
+                </label>
                 <input id="v-name" name="v-name" type="text" required
-                  className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                   placeholder="Your name" />
               </div>
               <div>
-                <label htmlFor="v-email" className="block text-sm font-medium text-[#F5F0E8] mb-1">Email *</label>
+                <label htmlFor="v-email" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+                  Email *
+                </label>
                 <input id="v-email" name="v-email" type="email" required
-                  className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                   placeholder="your@email.com" />
               </div>
               <div>
-                <label htmlFor="v-phone" className="block text-sm font-medium text-[#F5F0E8] mb-1">Phone (optional)</label>
+                <label htmlFor="v-phone" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+                  Phone (optional)
+                </label>
                 <input id="v-phone" name="v-phone" type="tel"
-                  className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
                   placeholder="+234..." />
               </div>
               <div>
-                <label htmlFor="v-interest" className="block text-sm font-medium text-[#F5F0E8] mb-1">I&apos;m interested in (optional)</label>
+                <label htmlFor="v-interest" className="block text-sm font-medium text-[var(--text-primary)] mb-1">
+                  I&apos;m interested in (optional)
+                </label>
                 <div className="relative">
                   <select
                     id="v-interest"
                     name="v-interest"
-                    className="w-full appearance-none px-4 py-2.5 pr-10 rounded-xl border border-stone-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none text-stone-700 cursor-pointer transition-colors"
+                    className="w-full appearance-none px-4 py-2.5 pr-10 rounded-xl border border-[var(--border)] bg-[var(--surface)] focus:border-[var(--accent-gold)] focus:ring-2 focus:ring-[var(--accent-gold)]/20 outline-none text-[var(--text-primary)] cursor-pointer transition-colors"
                   >
                     <option value="">Select...</option>
                     <option value="outreach">Outreach / Medical & Welfare</option>
@@ -150,8 +162,11 @@ export default function GetInvolvedPage() {
               {volunteerError && (
                 <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3">{volunteerError}</p>
               )}
-              <button type="submit" disabled={volunteerStatus === "loading"}
-                className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-light transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+              <button
+                type="submit"
+                disabled={volunteerStatus === "loading"}
+                className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-light transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+              >
                 {volunteerStatus === "loading" ? <><Loader2 className="h-4 w-4 animate-spin" />Submitting…</> : "Submit"}
               </button>
             </motion.form>
@@ -160,35 +175,44 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Partnership */}
-      <section id="partner" className="py-16 bg-[#0D0A07] scroll-mt-24">
+      <section id="partner" className="py-16 bg-[var(--background-secondary)] dark:bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-4xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-8">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-gold)]/15 text-[var(--accent-gold)] dark:bg-primary/25 dark:text-accent">
               <Handshake className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Partnership & Sponsorship</h2>
-              <p className="text-[#F5F0E8B3] text-sm">Businesses and professionals: join the Blessings Partners Circle.</p>
+              <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8]">
+                Partnership & Sponsorship
+              </h2>
+              <p className="text-[var(--text-secondary)] dark:text-[#F5F0E8B3] text-sm">
+                Businesses and professionals: join the Blessings Partners Circle.
+              </p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6 mb-10">
             {partnerTiers.map((tier, i) => (
-              <motion.div key={tier.name}
-                className="p-6 glass-dark"
+              <motion.div
+                key={tier.name}
+                className="p-6 section-card"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}>
-                <h3 className="font-display text-lg font-semibold text-[#F5F0E8]">{tier.name}</h3>
-                <p className="mt-1 text-accent font-medium">{tier.amount}</p>
-                <p className="mt-2 text-sm text-[#F5F0E8B3]">{tier.description}</p>
+                <h3 className="font-display text-lg font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8]">
+                  {tier.name}
+                </h3>
+                <p className="mt-1 text-[var(--accent-gold)] dark:text-accent font-medium">{tier.amount}</p>
+                <p className="mt-2 text-sm text-[var(--text-secondary)] dark:text-[#F5F0E8B3]">
+                  {tier.description}
+                </p>
               </motion.div>
             ))}
           </div>
           {partnerStatus === "success" ? (
             <SuccessMessage message="Thank you! We'll reach out to discuss partnership." />
           ) : (
-            <motion.form
+              <motion.form
               onSubmit={async (e) => {
                 e.preventDefault();
                 setPartnerError("");
@@ -217,21 +241,50 @@ export default function GetInvolvedPage() {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="p-name" className="block text-sm font-medium text-stone-700 mb-1">Name / Organization *</label>
-                  <input id="p-name" name="p-name" type="text" required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <label
+                    htmlFor="p-name"
+                    className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                  >
+                    Name / Organization *
+                  </label>
+                  <input
+                    id="p-name"
+                    name="p-name"
+                    type="text"
+                    required
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="p-email" className="block text-sm font-medium text-stone-700 mb-1">Email *</label>
-                  <input id="p-email" name="p-email" type="email" required
-                    className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" />
+                  <label
+                    htmlFor="p-email"
+                    className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                  >
+                    Email *
+                  </label>
+                  <input
+                    id="p-email"
+                    name="p-email"
+                    type="email"
+                    required
+                    className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none"
+                  />
                 </div>
               </div>
               <div>
-                <label htmlFor="p-message" className="block text-sm font-medium text-stone-700 mb-1">Tell us about your interest</label>
-                <textarea id="p-message" name="p-message" rows={4}
-                  className="w-full px-4 py-2.5 rounded-xl border border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none"
-                  placeholder="Partnership type, in-kind support, or how you'd like to contribute..." />
+                <label
+                  htmlFor="p-message"
+                  className="block text-sm font-medium text-[var(--text-primary)] mb-1"
+                >
+                  Tell us about your interest
+                </label>
+                <textarea
+                  id="p-message"
+                  name="p-message"
+                  rows={4}
+                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] dark:border-stone-200 bg-[var(--surface)] dark:bg-transparent text-[var(--text-primary)] focus:border-[var(--accent-gold)] dark:focus:border-primary focus:ring-2 focus:ring-[var(--accent-gold)]/20 dark:focus:ring-primary/20 outline-none resize-none"
+                  placeholder="Partnership type, in-kind support, or how you'd like to contribute..."
+                />
               </div>
               {partnerError && (
                 <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3">{partnerError}</p>
@@ -246,15 +299,19 @@ export default function GetInvolvedPage() {
       </section>
 
       {/* Prayer */}
-      <section id="prayer" className="py-16 bg-[#0D0A07] scroll-mt-24">
+      <section id="prayer" className="py-16 bg-[var(--background)] dark:bg-[#0D0A07] scroll-mt-24">
         <div className="max-w-2xl mx-auto px-4">
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/25 text-accent">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent-gold)]/15 text-[var(--accent-gold)] dark:bg-primary/25 dark:text-accent">
               <MessageCircle className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-semibold text-[#F5F0E8]">Prayer Requests</h2>
-              <p className="text-[#F5F0E8B3] text-sm">We pray with you. Submit a request or use the &quot;Pray With Us&quot; button on any page.</p>
+              <h2 className="font-display text-2xl font-semibold text-[var(--text-primary)] dark:text-[#F5F0E8]">
+                Prayer Requests
+              </h2>
+              <p className="text-[var(--text-secondary)] dark:text-[#F5F0E8B3] text-sm">
+                We pray with you. Submit a request or use the &quot;Pray With Us&quot; button on any page.
+              </p>
             </div>
           </div>
           {prayerStatus === "success" ? (

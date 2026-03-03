@@ -26,10 +26,10 @@ export default function EventsPage() {
 
   return (
     <>
-      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1A1208] via-transparent to-[#050302]">
+      <section className="pt-28 pb-16 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background)] dark:from-[#1A1208] dark:via-transparent dark:to-[#050302]">
         <div className="max-w-4xl mx-auto px-4">
           <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-[#F5F0E8]"
+            className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)] dark:text-[#F5F0E8]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ export default function EventsPage() {
             Events
           </motion.h1>
           <motion.p
-            className="mt-4 text-xl text-[#F5F0E8B3]"
+            className="mt-4 text-xl text-[var(--text-secondary)] dark:text-[#F5F0E8B3]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -48,7 +48,7 @@ export default function EventsPage() {
       </section>
 
       {featured && (
-        <section className="py-8 bg-[#0D0A07]">
+        <section className="py-8 bg-[var(--background)] dark:bg-[#0D0A07]">
           <div className="max-w-6xl mx-auto px-4">
             <p className="text-sm font-medium text-accent mb-2">Featured</p>
             <motion.div
@@ -100,7 +100,7 @@ export default function EventsPage() {
         </section>
       )}
 
-      <section className="py-12 bg-[#0D0A07]">
+      <section className="py-12 bg-[var(--background-secondary)] dark:bg-[#0D0A07]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap gap-2 mb-8">
             {filters.map((f) => (
@@ -110,8 +110,8 @@ export default function EventsPage() {
                 onClick={() => setFilter(f.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   filter === f.value
-                    ? "bg-accent text-accent-foreground shadow-[0_0_16px_rgba(212,175,55,0.5)]"
-                    : "bg-[#1C1508] text-[#F5F0E8B3] hover:bg-[#2A1C0C]"
+                    ? "bg-[var(--accent-gold)] dark:bg-accent text-white dark:text-accent-foreground shadow-[0_0_16px_rgba(184,134,11,0.4)] dark:shadow-[0_0_16px_rgba(212,175,55,0.5)]"
+                    : "bg-[var(--surface-muted)] dark:bg-[#1C1508] text-[var(--text-secondary)] dark:text-[#F5F0E8B3] hover:bg-[var(--border)]/50 dark:hover:bg-[#2A1C0C]"
                 }`}
               >
                 {f.label}
@@ -124,7 +124,7 @@ export default function EventsPage() {
             ))}
           </div>
           {filtered.length === 0 && (
-            <p className="text-center text-[#F5F0E8B3] py-12">
+            <p className="text-center text-[var(--text-secondary)] dark:text-[#F5F0E8B3] py-12">
               No events in this category yet. Check back soon.
             </p>
           )}

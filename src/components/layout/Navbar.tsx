@@ -56,22 +56,27 @@ export function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-          <Link href="/" className="shrink-0 flex items-center gap-2" aria-label="Blessings Movement – Home">
+          <Link
+            href="/"
+            className="shrink-0 flex items-center gap-2 bg-transparent"
+            aria-label="Blessings Movement – Home"
+          >
             <Image
               src="/logo/logo.png"
-              alt=""
-              width={260}
-              height={80}
-              className={cn(
-                "h-14 md:h-16 w-auto object-contain object-left transition-all duration-300",
-                isLight
-                  ? "drop-shadow-[0_1px_2px_rgba(90,60,20,0.15)]"
-                  : useLightNav
-                    ? "invert brightness-110 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
-                    : "drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]"
-              )}
+              alt="Blessings Movement"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain object-left transition-all duration-300 dark:brightness-0 dark:invert"
               priority
             />
+            <span className="flex flex-col leading-tight">
+              <span className="text-[1.1rem] font-bold text-[#1A0F00] dark:text-white">
+                Blessings
+              </span>
+              <span className="text-[1.1rem] font-bold text-[#1A0F00] dark:text-white">
+                Movement
+              </span>
+            </span>
           </Link>
           <nav className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
